@@ -118,7 +118,7 @@ window.kintoneAzureConnect = {
 * [jquery.min.js](https://js.cybozu.com/jquery/3.2.1/jquery.min.js)
 * [sweetalert2.min.js](https://js.cybozu.com/sweetalert2/v6.10.1/sweetalert2.min.js)
 * [kintoneUtility.min.js](https://kintone.github.io/kintoneUtility/kintoneUtility.min.js)
-* [common-js-functions.min.js](lib/common-js-functions.min.js)
+* [common-js-functions.min.js](common/common-js-functions.min.js)
 * [kintone-connect-outlook_mail_common.js](apps/outlook-mail/js/kintone-connect-outlook_mail_common.js)
 * [oauth.js](common/outlook-auth/js/oauth.js)
 * [kintone-connect-outlook_mail.js](apps/outlook-mail/js/kintone-connect-outlook_mail.js)
@@ -128,7 +128,7 @@ window.kintoneAzureConnect = {
 * [jquery.min.js](https://js.cybozu.com/jquery/3.2.1/jquery.min.js)
 * [sweetalert2.min.js](https://js.cybozu.com/sweetalert2/v6.10.1/sweetalert2.min.js)
 * [kintoneUtility.min.js](https://kintone.github.io/kintoneUtility/kintoneUtility.min.js)
-* [common-js-functions.min.js](lib/common-js-functions.min.js)
+* [common-js-functions.min.js](common/common-js-functions.min.js)
 * [kintone-connect-outlook-schedule-common.js](apps/outlook-schedule/js/kintone-connect-outlook-schedule-common.js)
 * [oauth.js](common/outlook-auth/js/oauth.js)
 * [kintone-connect-outlook-schedule.js](apps/outlook-schedule/js/kintone-connect-outlook-schedule.js)
@@ -138,11 +138,11 @@ window.kintoneAzureConnect = {
 
 ***In case of cooperation with Outlook Mail***
 * [sweetalert2.min.css](https://js.cybozu.com/sweetalert2/v6.10.1/sweetalert2.min.css)
-* [kintone-connect-outlook_mail.css](kintone-connect-outlook_mail.css)
+* [kintone-connect-outlook_mail.css](apps/outlook-mail/css/kintone-connect-outlook_mail.css)
 
 ***In case of cooperation with Outlook Schedule***
 * [sweetalert2.min.css](https://js.cybozu.com/sweetalert2/v6.10.1/sweetalert2.min.css)
-* [kintone-connect-outlook_mail.css](kintone-connect-outlook-schedule.css)
+* [kintone-connect-outlook_schedule.css](apps/outlook-schedule/css/kintone-connect-outlook-schedule.css)
 
 ## Authentication flow
 ![overview image](img/AuthenticationFlow.png?raw=true)
