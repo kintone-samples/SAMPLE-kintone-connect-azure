@@ -356,7 +356,7 @@ jQuery.noConflict();
             // OutlookのINBOXからメール取得
             return kintone.proxy(MAIL_GET_URL, 'GET', header, {}).then(function(res) {
                 var data = JSON.parse(res[0]).value;
-                
+
                 if (data === undefined) {
                     swal({
                         title: 'ERROR!',
@@ -624,11 +624,11 @@ jQuery.noConflict();
                 showCancelButton: 'true',
                 allowOutsideClick: false
             }).then(function(isConfirm) {
-                if (isConfirm) {
+                if (isConfirm.value) {
                     self.sendMail(kinRec);
+                } else {
+                    KC.ui.loading.hide();
                 }
-            }, function(dismiss) {
-                KC.ui.loading.hide();
             });
         },
 
