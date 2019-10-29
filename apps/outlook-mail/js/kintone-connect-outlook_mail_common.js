@@ -2,15 +2,15 @@ window.kintoneAzureConnect = {
 
   config: {
     auth: {
-      clientId: '00074e52-413b-4ab9-9698-b268f4693e68',
+      clientId: '####################',
       authority: 'https://login.microsoftonline.com/common'
     },
     cache: {
-      cacheLocation: "localStorage",
+      cacheLocation: 'localStorage',
       storeAuthStateInCookie: true
     }
   },
-  
+
   graphApiScorp: {
     scopes: ['mail.read', 'mail.send']
   },

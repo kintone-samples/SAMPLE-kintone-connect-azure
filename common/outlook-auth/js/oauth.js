@@ -5,7 +5,7 @@
   var KAC = window.kintoneAzureConnect;
 
   var azureOauth = {
-    
+
     userAgentApplication: null,
 
     getUserInfo: function() {

@@ -625,7 +625,7 @@ jQuery.noConflict();
         showCancelButton: 'true',
         allowOutsideClick: false
       }).then(function(isConfirm) {
-        if (isConfirm.dismiss !== "cancel") {
+        if (isConfirm.dismiss !== 'cancel') {
           self.sendMail(kinRec);
         } else {
           KC.ui.loading.hide();

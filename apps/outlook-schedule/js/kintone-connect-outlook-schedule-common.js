@@ -2,11 +2,11 @@ window.kintoneAzureConnect = {
 
   config: {
     auth: {
-      clientId: 'b689274d-3ed5-429d-aa7a-23a2d446af0e',
+      clientId: '####################',
       authority: 'https://login.microsoftonline.com/common'
     },
     cache: {
-      cacheLocation: "localStorage",
+      cacheLocation: 'localStorage',
       storeAuthStateInCookie: true
     }
   },
@@ -34,11 +34,9 @@ window.kintoneAzureConnect = {
 
       // Field code of eventId
       eventId: 'EventId',
-      
+
       // Field code of attachFile
       attachFile: 'Attachments'
     }
   }
 };
-
-

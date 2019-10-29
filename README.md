@@ -32,11 +32,11 @@ window.kintoneAzureConnect = {
 
   config: {
     auth: {
-      clientId: '00074e52-413b-4ab9-9698-b268f4693e68',
+      clientId: '####################',
       authority: 'https://login.microsoftonline.com/common'
     },
     cache: {
-      cacheLocation: "localStorage",
+      cacheLocation: 'localStorage',
       storeAuthStateInCookie: true
     }
   },
@@ -91,11 +91,11 @@ window.kintoneAzureConnect = {
 
   config: {
     auth: {
-      clientId: 'b689274d-3ed5-429d-aa7a-23a2d446af0e',
+      clientId: '####################',
       authority: 'https://login.microsoftonline.com/common'
     },
     cache: {
-      cacheLocation: "localStorage",
+      cacheLocation: 'localStorage',
       storeAuthStateInCookie: true
     }
   },
