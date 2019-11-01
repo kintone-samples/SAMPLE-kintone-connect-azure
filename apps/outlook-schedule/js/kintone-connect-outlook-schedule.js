@@ -257,7 +257,7 @@ jQuery.noConflict();
         record: putParam,
         isGuest: false
       };
-      return kintoneSDKRecord.updateRecordByID(param).then(function(resp) {});
+      return kintoneSDKRecord.updateRecordByID(param);
     },
 
     checkDateTime: function(record) {
@@ -466,15 +466,16 @@ jQuery.noConflict();
         } else {
           if (sendParam.hasAttachments) {
             return outlookAPI.registerToOutlookForAttachement(0, files, responseDataJson.id, accessToken).then(function() {
-              kintoneScheduleService.setEventIdToKintone(recId, responseDataJson.id);
-              Swal.fire({
-                title: 'SUCCESS!',
-                type: 'success',
-                text: kintoneScheduleService.setting.i18n.message.success.registerExec,
-                allowOutsideClick: false
-              }).then(function() {
-                KC.ui.loading.hide();
-                location.reload();
+              return kintoneScheduleService.setEventIdToKintone(recId, responseDataJson.id).then(function() {
+                return Swal.fire({
+                  title: 'SUCCESS!',
+                  type: 'success',
+                  text: kintoneScheduleService.setting.i18n.message.success.registerExec,
+                  allowOutsideClick: false
+                }).then(function() {
+                  KC.ui.loading.hide();
+                  location.reload();
+                });
               });
             }).catch(function(error) {
               Swal.fire({
@@ -483,20 +484,20 @@ jQuery.noConflict();
                 text: kintoneScheduleService.setting.i18n.message.error.addAttachFileFailure,
                 allowOutsideClick: false
               });
-              kintoneScheduleService.setEventIdToKintone(recId, responseDataJson.id);
               KC.ui.loading.hide();
             });
           }
 
-          kintoneScheduleService.setEventIdToKintone(recId, responseDataJson.id);
-          Swal.fire({
-            title: 'SUCCESS!',
-            type: 'success',
-            text: kintoneScheduleService.setting.i18n.message.success.registerExec,
-            allowOutsideClick: false
-          }).then(function() {
-            KC.ui.loading.hide();
-            location.reload();
+          return kintoneScheduleService.setEventIdToKintone(recId, responseDataJson.id).then(function() {
+            return Swal.fire({
+              title: 'SUCCESS!',
+              type: 'success',
+              text: kintoneScheduleService.setting.i18n.message.success.registerExec,
+              allowOutsideClick: false
+            }).then(function() {
+              KC.ui.loading.hide();
+              location.reload();
+            });
           });
         }
       }).catch(function(error) {

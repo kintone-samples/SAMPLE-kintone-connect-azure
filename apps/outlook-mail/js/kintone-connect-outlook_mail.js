@@ -57,7 +57,9 @@ jQuery.noConflict();
             sendFailure: 'Failed to send email.',
             signInFailure: 'Failed to sign in Outlook.',
             getAccessTokenFailure: 'Failed to get access token.',
-            accessOutlookFailure: 'Failed to access to outlook.'
+            accessOutlookFailure: 'Failed to access to outlook.',
+            getOutlookMailFailure: 'Failed to get outlook mails.',
+            addKintoneRecordFailure: 'Failed to add kintone Record.'
           }
         }
       },
@@ -84,7 +86,9 @@ jQuery.noConflict();
             sendFailure: 'メールの送信に失敗しました',
             signInFailure: 'サインインできませんでした',
             getAccessTokenFailure: 'アクセストークンが取得できませんでした',
-            accessOutlookFailure: 'Outlookにアクセス出来ませんでした'
+            accessOutlookFailure: 'Outlookにアクセス出来ませんでした',
+            getOutlookMailFailure: 'Outlookメールの取得に失敗しました',
+            addKintoneRecordFailure: 'kintoneレコードの登録に失敗しました'
           }
         }
       }
@@ -283,10 +287,7 @@ jQuery.noConflict();
           });
           self.userAgentApplication = null;
           KC.ui.loading.hide();
-          // return;
         }
-      }).then(function() {
-        KC.ui.loading.hide();
       }).catch(function() {
         KC.ui.loading.hide();
       });
@@ -373,9 +374,21 @@ jQuery.noConflict();
 
         // 取得したメールをkintoneへ登録
         self.putMailToKintoneApp(0, data, accessToken).catch(function(err) {
+          Swal.fire({
+            title: 'ERROR!',
+            type: 'error',
+            text: kintoneMailService.setting.i18n.message.error.addKintoneRecordFailure,
+            allowOutsideClick: false
+          });
           KC.ui.loading.hide();
         });
       }, function(err) {
+        Swal.fire({
+          title: 'ERROR!',
+          type: 'error',
+          text: kintoneMailService.setting.i18n.message.error.getOutlookMailFailure,
+          allowOutsideClick: false
+        });
         KC.ui.loading.hide();
       });
     },
@@ -395,6 +408,7 @@ jQuery.noConflict();
           if (indexMessage + 1 < data.length) {
             return self.putMailToKintoneApp(indexMessage + 1, data, accessToken);
           }
+          return null;
         });
       }).then(function(resp) {
         window.location.reload();
