@@ -2,26 +2,26 @@ jQuery.noConflict();
 (function($) {
   'use strict';
 
-  // common-js-functions.js
+  // common/common-js-functions.min.js
   var KC = window.kintoneCustomize;
 
-  // azure_oauth.js
+  // common/outlook-auth/js/oauth.js
   var AO = window.azureOauth;
 
-  // kintone-0365-shcedule_common.js
-  var CM = window.kintoneAzureConnect;
+  // apps/outlook-schedule/js/kintone-connect-outlook-schedule-common.js
+  var KAC = window.kintoneAzureConnect;
 
   // kintone-js-sdk
   var kintoneSDKRecord = new kintoneJSSDK.Record();
 
-  // Get value from kintone-o365-schedule_common.js
-  var SUBJECT_FIELD_CODE = CM.kintone.fieldCode.subject;
-  var BODY_FIELD_CODE = CM.kintone.fieldCode.body;
-  var START_DATE_FIELD_CODE = CM.kintone.fieldCode.startDate;
-  var END_DATE_FIELD_CODE = CM.kintone.fieldCode.endDate;
-  var ATTACH_FILE_FIELD_CODE = CM.kintone.fieldCode.attachFile;
-  var EVENT_ID_FIELD_CODE = CM.kintone.fieldCode.eventId;
-  var EVENT_URL = CM.eventUrl;
+  // Get value from kintone-connect-outlook-schedule-common.js
+  var SUBJECT_FIELD_CODE = KAC.kintone.fieldCode.subject;
+  var BODY_FIELD_CODE = KAC.kintone.fieldCode.body;
+  var START_DATE_FIELD_CODE = KAC.kintone.fieldCode.startDate;
+  var END_DATE_FIELD_CODE = KAC.kintone.fieldCode.endDate;
+  var ATTACH_FILE_FIELD_CODE = KAC.kintone.fieldCode.attachFile;
+  var EVENT_ID_FIELD_CODE = KAC.kintone.fieldCode.eventId;
+  var EVENT_URL = KAC.eventUrl;
 
   var storage = window.localStorage;
 

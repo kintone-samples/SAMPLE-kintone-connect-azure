@@ -2,32 +2,32 @@ jQuery.noConflict();
 (function($) {
   'use strict';
 
-  // common-js-functions.js
+  // common/common-js-functions.min.js
   var KC = window.kintoneCustomize;
 
-  // azure_oauth.js
+  // common/outlook-auth/js/oauth.js
   var AO = window.azureOauth;
 
-  // kintone-0365-connect_common.js
-  var CM = window.kintoneAzureConnect;
+  // apps/outlook-mail/js/kintone-connect-outlook_mail_common.js
+  var KAC = window.kintoneAzureConnect;
 
   // kintone-js-sdk
   var kintoneSDKRecord = new kintoneJSSDK.Record();
   var kintoneFile = new kintoneJSSDK.File();
 
-  // Get value from kintone-0365-connect_common.js
-  var SUBJECT_FIELD_CODE = CM.kintone.fieldCode.subject;
-  var CONTENT_FIELD_CODE = CM.kintone.fieldCode.content;
-  var FROM_FIELD_CODE = CM.kintone.fieldCode.from;
-  var TO_FIELD_CODE = CM.kintone.fieldCode.to;
-  var CC_FIELD_CODE = CM.kintone.fieldCode.cc;
-  var BCC_FIELD_CODE = CM.kintone.fieldCode.bcc;
-  var MESSAGE_ID_FIELD_CODE = CM.kintone.fieldCode.messageId;
-  var MAIL_ACCOUNT_FIELD_CODE = CM.kintone.fieldCode.mailAccount;
-  var ATTACH_FILE_FIELD_CODE = CM.kintone.fieldCode.attachFile;
+  // Get value from kintone-connect-outlook_mail_common.js
+  var SUBJECT_FIELD_CODE = KAC.kintone.fieldCode.subject;
+  var CONTENT_FIELD_CODE = KAC.kintone.fieldCode.content;
+  var FROM_FIELD_CODE = KAC.kintone.fieldCode.from;
+  var TO_FIELD_CODE = KAC.kintone.fieldCode.to;
+  var CC_FIELD_CODE = KAC.kintone.fieldCode.cc;
+  var BCC_FIELD_CODE = KAC.kintone.fieldCode.bcc;
+  var MESSAGE_ID_FIELD_CODE = KAC.kintone.fieldCode.messageId;
+  var MAIL_ACCOUNT_FIELD_CODE = KAC.kintone.fieldCode.mailAccount;
+  var ATTACH_FILE_FIELD_CODE = KAC.kintone.fieldCode.attachFile;
 
-  var MAIL_GET_URL = CM.mail.mailGetUrl;
-  var MAIL_SEND_URL = CM.mail.mailSendUrl;
+  var MAIL_GET_URL = KAC.mail.mailGetUrl;
+  var MAIL_SEND_URL = KAC.mail.mailSendUrl;
 
   var storage = window.localStorage;
 
