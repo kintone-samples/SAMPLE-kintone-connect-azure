@@ -16,7 +16,7 @@ window.kintoneAzureConnect = {
   },
 
   mail: {
-    mailGetUrl: 'https://graph.microsoft.com/v1.0/me/messages?$top=100',
+    mailGetUrl: 'https://graph.microsoft.com/v1.0/me/messages',
     mailSendUrl: 'https://graph.microsoft.com/v1.0/me/sendmail'
   },
 

@@ -346,8 +346,10 @@ jQuery.noConflict();
         'outlook.body-content-type': 'html'
       };
 
+      var userInfo = storage.getItem('SIGN_USER_MAILACCOUNT');
+      var mailGetUrl = MAIL_GET_URL + "?$top=100&$filter=from/emailAddress/address+ne+'" + userInfo + "'";
       // OutlookのINBOXからメール取得
-      kintone.proxy(MAIL_GET_URL, 'GET', header, {}).then(function(res) {
+      kintone.proxy(mailGetUrl, 'GET', header, {}).then(function(res) {
         var data = JSON.parse(res[0]).value;
         if (data === undefined) {
           Swal.fire({
