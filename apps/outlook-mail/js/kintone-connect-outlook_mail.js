@@ -374,8 +374,11 @@ jQuery.noConflict();
           return;
         }
 
+        var filteringData = data.filter(function(d) {
+          return d.toRecipients.length !== 0 && d.from !== undefined
+        });
         // 取得したメールをkintoneへ登録
-        self.putMailToKintoneApp(0, data, accessToken).catch(function(err) {
+        self.putMailToKintoneApp(0, filteringData, accessToken).catch(function(err) {
           Swal.fire({
             title: 'ERROR!',
             type: 'error',
