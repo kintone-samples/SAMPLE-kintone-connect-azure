@@ -1,38 +1,37 @@
 /* global Msal */
 (function() {
-    'use strict';
+  'use strict';
 
-    var KAC = window.kintoneAzureConnect;
+  var KAC = window.kintoneAzureConnect;
 
-    var azureOauth = {
+  var azureOauth = {
 
-        userAgentApplication: null,
+    userAgentApplication: null,
 
-        getUserInfo: function() {
-            return this.userAgentApplication.getUser();
-        },
+    getUserInfo: function() {
+      return this.userAgentApplication.getAccount().userName;
+    },
 
-        init: function() {
-            this.userAgentApplication = new Msal.UserAgentApplication(KAC.azure.clientId, null, function(
-                errorDes, token, error, tokenType) {});
-            return this.userAgentApplication.getUser();
-        },
+    init: function() {
+      var self = this;
+      self.userAgentApplication = new Msal.UserAgentApplication(KAC.config);
+    },
 
-        signIn: function() {
-            var self = this;
-            return self.userAgentApplication.loginPopup(KAC.azure.access);
-        },
+    signIn: function() {
+      var self = this;
+      return self.userAgentApplication.loginPopup(KAC.graphApiScorp);
+    },
 
-        signOut: function() {
-            var self = this;
-            self.userAgentApplication.logout();
-        },
+    signOut: function() {
+      var self = this;
+      self.userAgentApplication.logout();
+    },
 
-        callGraphApi: function() {
-            var self = this;
-            return self.userAgentApplication.acquireTokenSilent(KAC.azure.graphApiScorp);
-        }
-    };
+    callGraphApi: function() {
+      var self = this;
+      return self.userAgentApplication.acquireTokenSilent(KAC.graphApiScorp);
+    }
+  };
 
-    window.azureOauth = azureOauth || {};
+  window.azureOauth = azureOauth || {};
 }());
