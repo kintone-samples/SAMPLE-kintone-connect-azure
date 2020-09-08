@@ -1,6 +1,6 @@
 {
   "name": "sample-kintone-connect-azure",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "kintone customization integration with Outlook Service (Mail, Schedule)",
   "repository": {
     "type": "git",
