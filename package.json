@@ -13,6 +13,7 @@
   "homepage": "https://github.com/kintone/SAMPLE-kintone-connect-azure#readme",
   "devDependencies": {
     "@cybozu/eslint-config": "^8.0.0",
-    "eslint": "^6.6.0"
+    "eslint": "^6.6.0",
+    "lodash": "^4.17.19"
   }
 }
